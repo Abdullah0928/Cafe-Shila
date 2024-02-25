@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#navbar{
+    position:sticky;
+    top: 0;
+    left:o;
+    z-index:100;
+    background:black;
+    
+}
+.navbar .navbar-brand{
+    font-size:30px;
+    font-weight:700;
+    color:red !important;
+    
+}
+#navbarSupportedContent a{
+    color: #fff;
+    border-bottom: 2px solid transparent;
+}
+#navbarSupportedContent a:hover{
+    color: red;
+    border-bottom:2px solid rgb(232, 40, 40);
+}
+#navbarSupportedContent button{
+    background:#fff ;
+    border-radius:15px ;
+}
+
+.about_me {
+    position: absolute;
+    top: 60px;
+    display: flex;
+    height: 92%;
+    width: 100%;
+    
+}
+
+
+
+
+
+.photo {
+    flex: 1;
+    background-image:  url('https://img.freepik.com/free-photo/confident-young-female-cook-wearing-chef-uniform-crossing-hands-isolated-white-background_141793-105456.jpg?size=626&ext=jpg&uid=R117020328&ga=GA1.2.1214768144.1702551496&semt=ais'); 
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #5f5555;
+}
+
+.content p {
+    position: relative;
+    top: 20%;
+    font-size:24px;
+    color: azure;
+}
+
+.content h1 {
+    position: relative;
+    top: 15%;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: bisque;
+}
+.cart_icon{
+    margin-right: 20px;
+    
+}

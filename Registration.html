@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Designed by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Registration Form | CodingLab </title>
+  <link rel="stylesheet" href="login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">Shila's Registration</div>
+    <div class="content">
+      <form id="registrationForm" method="post" action="register.php">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+<!-- ... (previous HTML code) ... -->
+
+<script>
+  document.getElementById("registrationForm").addEventListener("submit", function (event) {
+    var password = document.getElementById("password").value;
+    var email = document.querySelector('input[type="email"]').value;
+
+    // Check for common passwords
+    var commonPasswords = ["password", "123456", "qwerty", "admin", "letmein"];
+    if (commonPasswords.includes(password.toLowerCase())) {
+      alert("Please choose a stronger password. Avoid common passwords.");
+      event.preventDefault();
+      return;
+    }
+
+    // Password strength checks
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters long.");
+      event.preventDefault();
+      return;
+    }
+
+    // Check for at least one uppercase letter
+    if (!/[A-Z]/.test(password)) {
+      alert("Password must contain at least one uppercase letter.");
+      event.preventDefault();
+      return;
+    }
+
+    // Check for at least one lowercase letter
+    if (!/[a-z]/.test(password)) {
+      alert("Password must contain at least one lowercase letter.");
+      event.preventDefault();
+      return;
+    }
+
+    // Check for at least one digit
+    if (!/\d/.test(password)) {
+      alert("Password must contain at least one digit.");
+      event.preventDefault();
+      return;
+    }
+
+    // Check for at least one special character
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      alert("Password must contain at least one special character.");
+      event.preventDefault();
+      return;
+    }
+
+    // If all checks pass, the form will be submitted.
+  });
+</script>
+
+<!-- ... (remaining HTML code) ... -->
+
+
+</body>
+
+</html>
